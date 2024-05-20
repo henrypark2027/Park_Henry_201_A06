@@ -48,7 +48,7 @@ To get full credit for this Question you must:
 
 ## Github Repo Link
 
-[https://your-github-repo-url](https://your-github-repo-url)
+[https://github.com/henrypark2027/Park_Henry_201_A06/tree/main](https://github.com/henrypark2027/Park_Henry_201_A06/tree/main)
 
 :::
 
