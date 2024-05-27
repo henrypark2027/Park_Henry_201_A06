@@ -58,9 +58,6 @@ To get full credit for this Question you must:
 
 ![](github_setup.png)
 
-:::
-
-
 ## Question 2 (8 points)
 
 Consider the list of lists below containing basketball player information.
@@ -102,7 +99,8 @@ Extract the value `8162` (LeBron James points) in 2 different ways:
 - using names
 
 ```{r}
-
+print(player_info[[2]][[4]])
+print(player_info$LJ$points)
 ```
 
 
