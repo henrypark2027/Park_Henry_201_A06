@@ -103,7 +103,6 @@ print(player_info[[2]][[4]])
 print(player_info$LJ$points)
 ```
 
-
 ### Part b (3 points)
 
 Add a new named element to the end of each player's list called `height`. The heights in inches are as follows: MJ = 78; LJ = 81; KB = 78; KA = 86; SO = 85.
@@ -119,7 +118,6 @@ player_info$SO <- append(player_info$SO, list(height = 85))
 
 print(player_info)
 ```
-
 ### Part c (3 points)
 
 Create a new list that contains elements corresponding to each player's `points_per_game`. 
@@ -135,10 +133,21 @@ Hint: initialize an empty list
 Note: this must still run correctly even if the values were to change or if another player were added to the list or if the player order changed.
 
 ```{r}
-
+# get points per game for each player
+points_per_game <- list()
+for (athlete in player_info) {
+  points_per_game <- append(points_per_game, athlete$points/athlete$games_played)
+}
+# collect player names in a vector
+names <- c()
+for (athlete in player_info) {
+  names <- append(names, athlete$name)
+}
+# assign names vector to points_per_game
+names(points_per_game) <- names
+# print points_per_game list
+print(points_per_game)
 ```
-
-
 ### Part d (1 point)
 
 Use the list created in Part c and an appropriate apply function to round each value to two decimal places.
