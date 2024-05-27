@@ -111,9 +111,14 @@ Add a new named element to the end of each player's list called `height`. The he
 Print the `player_info` list to prove you were successful.
 
 ```{r}
-player_info <- append(player_info$height$MJ, "height" = 78)
-```
+player_info$MJ <- append(player_info$MJ, list(height=78))
+player_info$LJ <- append(player_info$LJ, list(height = 81))
+player_info$KB <- append(player_info$KB, list(height = 78))
+player_info$KA <- append(player_info$KA, list(height = 86))
+player_info$SO <- append(player_info$SO, list(height = 85))
 
+print(player_info)
+```
 
 ### Part c (3 points)
 
