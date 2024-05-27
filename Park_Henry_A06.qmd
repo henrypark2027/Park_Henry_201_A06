@@ -155,10 +155,14 @@ Use the list created in Part c and an appropriate apply function to round each v
 Store the output as a vector and print the results.
 
 ```{r}
+# round function 
+round_num <- function(my_num) {
+  return(round(my_num, digits=2))
+}
 
+# we have a list, so we should use lapply 
+lapply(points_per_game, round_num)
 ```
-
-
 ## Question 3 (3 points)
 
 Consider the matrix `mat_rand` of random numbers below.
@@ -176,7 +180,6 @@ ie: 91 rounds to 90; 173 rounds to 200; 1450 rounds to 1000
 Hint: use `MARGIN = 1:2` to apply the function to each value instead of only a row/col.
 
 ```{r}
-print(mat_rand)
 # round function 
 round_fun <- function(x) {
   digits <- as.character(x)
