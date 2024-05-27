@@ -176,10 +176,20 @@ ie: 91 rounds to 90; 173 rounds to 200; 1450 rounds to 1000
 Hint: use `MARGIN = 1:2` to apply the function to each value instead of only a row/col.
 
 ```{r}
+print(mat_rand)
+# round function 
+round_fun <- function(x) {
+  digits <- as.character(x)
+  num_digits <- nchar(digits)
+  round(x, digits=-(num_digits-1)) 
+  # ex) num_digits = nchar("262") = 3. 
+  # But, we want to round to the nearest hundred (which is digits = -2), so
+  # we want to subtract 1 from num_digits. 
+}
 
+# We have a matrix, so we want to use APPLY 
+print(apply(mat_rand, 1:2, round_fun))
 ```
-
-
 ## Question 4 (9 points)
 
 Run the below code chunk to load a data frame named `max_temps` into your Environment. May need to install `tidyverse` and `janitor` first in order for this to run. You can install packages by clicking on the **Packages** tab in the bottom right pane followed by clicking **Install**.
@@ -239,7 +249,6 @@ Note: This code should still run successfully even if the numbers were to change
 
 ```
 
-
 ## Question 5 (5 points)
 
 Write a recursive function that calculates the sum of the digits in a number. 
@@ -259,6 +268,5 @@ sum_digits <- function(my_num) {
 }
 
 print(sum_digits(935068))
-
 ```
 
